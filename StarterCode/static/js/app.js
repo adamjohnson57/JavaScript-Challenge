@@ -69,9 +69,16 @@ function runEnter() {
     tbody.html("");
 
     // Add data to table
-    filteredData.forEach(())
-
-
-
-
-
+    filteredData.forEach(function(ufoSighting) {
+        console.log(ufoSighting);
+        
+        var row = tbody.append("tr");
+        
+        Object.entries(ufoSighting).forEach(function([key, value]) {
+            console.log(key, value);
+            
+            var cell = row.append("td");
+            cell.text(value);
+        });
+    });
+};
