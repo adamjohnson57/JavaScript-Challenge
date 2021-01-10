@@ -32,11 +32,46 @@ function runEnter() {
 // Stop page from refreshing
     d3.event.preventDefault();
 
-// Select the input element and get the value property
-    var inputDate = d3.select("#datetime").property("value");
+// Select the input elements and find their value 
+    var inputDate = d3.select("#date").property("value");
     var inputCity = d3.select("#city").property("value");
     var inputState = d3.select("#state").property("value");
     var inputCountry = d3.select("#country").property("value");
     var inputShape = d3.select("#shape").property("value");
-}
+
+// Filter through data
+    if (inputDate === ""){
+        var filteredData = tableData;
+    }
+    else {
+        var filteredData = tableData.filter(value => value.datetime === inputDate);
+    }
+    if (inputCity === ""){}    
+    else {
+        var filteredData = tableData.filter(value => value.city === inputCity);
+    }
+    if (inputState === ""){}    
+    else {
+        var filteredData = tableData.filter(value => value.state === inputState);
+    }
+    if (inputCountry === ""){}    
+    else {
+        var filteredData = tableData.filter(value => value.country === inputCountry);
+    }
+    if (inputShape === ""){}    
+    else {
+        var filteredData = tableData.filter(value => value.shape === inputShape);
+    }      
+
+    console.log(filteredData);
+
+    // Clear table data
+    tbody.html("");
+
+    // Add data to table
+    filteredData.forEach(())
+
+
+
+
 
